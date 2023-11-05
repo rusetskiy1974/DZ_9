@@ -1,9 +1,9 @@
 import re
 # Home work 9
 
-telefone_directori_dict = {}
+telefone_directori_dict = {} # Створюємо словник для збрігання даних
 
-def input_error(func):
+def input_error(func):    # Функція декоратор приймає функцію із hundlera і  обробляє винятки
      
     def inner(volume):
         try:
@@ -18,9 +18,9 @@ def input_error(func):
         
     return inner   
 
-    
+# Функціі обробки команд hundlera
 @input_error
-def greeting (vol=None):
+def greeting (vol=None):                     
     if not vol:  
         return "How can I help you?"
     raise ValueError
@@ -77,7 +77,7 @@ hundler = {'hallo': greeting , 'add' : add_entry, 'change' : change_entry, 'phon
 
 
 
-def parser_hundler(str):
+def parser_hundler(str):        #Функція Парсер команд
     key_hundler = str.lower()
     for key in hundler.keys():
         if key_hundler.startswith(key):
@@ -96,7 +96,6 @@ def main():
         command_str = parser_hundler(hundler_string)
          
         if command_str:
-            # print (command_str)
             command = command_str[0]
             operand = command_str[1]
                
