@@ -94,16 +94,17 @@ def main():
         hundler_string = input ()
         
         command_str = parser_hundler(hundler_string)
+
          
         if command_str:
-            command = command_str[0]
+            command = hundler.get(command_str[0])
             operand = command_str[1]
                
-            if hundler.get(command) == bye and not operand:
-                print (hundler.get(command)(operand))
+            if command == bye and not operand:
+                print (command(operand))
                 break
-            if  hundler.get(command) == output_all_entry:
-                output = hundler.get(command)(operand)
+            if  command == output_all_entry:
+                output = command(operand)
                 print ('-'*32)
                 print (f"|{'Name': ^15}|{'Phone': ^15}|")
                 print ('-'*32)
@@ -111,7 +112,7 @@ def main():
                     print (f"|{key : <15}|{volume : <15}|") 
                 print ('-'*32)    
             else:
-                print(hundler.get(command)(operand))
+                print(command(operand))
         else:
             print ('Command is missing')    
         
