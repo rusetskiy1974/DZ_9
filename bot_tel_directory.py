@@ -32,7 +32,7 @@ def add_entry(vol):
     # print(vol[0])
     if  not telefone_directori_dict.get(operands[0]):
         telefone_directori_dict[operands[0]] = operands[1]
-        return 'Ok' #telefone_directori_dict
+        return 'Ok'  
         
     raise IndexError
     
@@ -43,7 +43,7 @@ def change_entry(vol):
     # print (vol)
     if  telefone_directori_dict.get(operands[0]):
         telefone_directori_dict[operands[0]] = operands[1]
-        return 'Ok' #telefone_directori_dict
+        return 'Ok'  
         
     raise KeyError
     
