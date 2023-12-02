@@ -15,7 +15,7 @@ def input_error(func):    # Функція декоратор приймає ф�
             return 'Give me name please'
         except IndexError:
             return  'Give me name and phone please'
-        
+         
     return inner   
 
 # Функціі обробки команд hundlera
